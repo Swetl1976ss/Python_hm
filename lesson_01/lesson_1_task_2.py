@@ -1,2 +1,2 @@
-my_name="Светлана"
-  print(my_name)
+my_age = 48
+print(my_age+3)
