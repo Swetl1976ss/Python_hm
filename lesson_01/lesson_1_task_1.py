@@ -1,10 +1,5 @@
-def print_greeting():
-    print('Привет, мир!')
-
-
-print_greeting()
-
-
+my_name="Светлана"
+print(my_name)
 
 
 
