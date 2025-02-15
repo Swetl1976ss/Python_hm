@@ -12,15 +12,8 @@ def test_capitalize(): # позитивные тесты на строчную �
 def trim(self, string: str) -> str:
     assert utils.trim("   skypro") == "skypro"
     assert utils.trim("skypro   ") == "skypro"
-    return string.strip()
+    return string.lstrip()
 
-
-@pytest.mark.skip
-def test_to_list(): # создает список строк из набора с различными разделителями
-        assert utils.to_list("a,b,c,d") == ["a", "b", "c", "d"]
-        assert utils.to_list("1:2:3", ":") == ["1", "2", "3"]
-        assert utils.to_list("") == []
-        assert utils.to_list("a,b,c,d,", ",") == ["a", "b", "c", "d", ""]
 
 def test_contains(): #Поиск нужного символа
         assert utils.contains("SkyPro", "S")
@@ -33,39 +26,17 @@ def test_delete_symbol(): # Исключение заданного символ
         assert utils.delete_symbol("Hello World!", "!") == "Hello World"
         assert utils.delete_symbol("", "x") == ""
 
-@pytest.mark.skip
-def test_starts_with():  #Определение отвечает ли первый символ заданному
-        assert utils.starts_with("SkyPro", "S")
-        assert not utils.starts_with("SkyPro", "P")
-        assert not utils.starts_with("", "A")
 
-@pytest.mark.skip #Негативные   тесты
-def test_end_with():
-        assert utils.end_with("SkyPro", "o")
-        assert not utils.end_with("SkyPro", "y")
-        assert not utils.end_with("", "A")
-
-@pytest.mark.skip
-def test_is_empty():
-        assert utils.is_empty("")
-        assert utils.is_empty(" ")
-        assert not utils.is_empty("SkyPro")
-
-@pytest.mark.skip
-def test_list_to_string(): # Объединение в строку
-        assert utils.list_to_string([1, 2, 3, 4]) == "1, 2, 3, 4"
-        assert utils.list_to_string(["Sky", "Pro"]) == "Sky, Pro"
-        assert utils.list_to_string(["Sky", "Pro"], "-") == "Sky-Pro"
-        assert utils.list_to_string([]) == ""
 #Негативные тесты
 
 def test_capitalize_empty_string():
     result = utils.capitalize("")
     assert result == "", "Ожидается, что пустая строка останется пустой"
 @pytest.mark.skip
-def test_trim_none():
-    result = utils.trim(None)
-    assert result is None, "Ожидается, что None останется None"
+def trim(self, string: str) -> str:
+    if not isinstance(string, str):
+        return None
+    return string.lstrip()
 @pytest.mark.skip
 def test_contains_non_string_input():
     result = utils.contains(12345, "1")
