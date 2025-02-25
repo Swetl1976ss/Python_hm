@@ -9,10 +9,11 @@ def test_capitalize(): # позитивные тесты на строчную �
         assert utils.capitalize("hi everyone") == "Hi everyone"
         assert utils.capitalize("") == ""
 
-def trim(self, string: str) -> str:
+def test_trim():
     assert utils.trim("   skypro") == "skypro"
-    assert utils.trim("skypro   ") == "skypro"
-    return string.lstrip()
+    assert utils.trim("skypro   ") == "skypro   "
+    assert utils.trim("") == ""
+    assert utils.trim("   ") == ""
 
 
 def test_contains(): #Поиск нужного символа
