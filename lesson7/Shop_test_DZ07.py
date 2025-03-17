@@ -4,7 +4,8 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from login_page import LoginPage
 from shop_page import ShopPage
-from cart_page import CartPage
+from card_page import CartPage
+
 from checkout_page import CheckoutPage
 
 class ShopTest(unittest.TestCase):
